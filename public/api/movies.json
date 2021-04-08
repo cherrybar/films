@@ -1,0 +1,10 @@
+{
+  "data": [{
+    "type": "user",
+    "id": "123",
+    "attributes": {
+      "name": "Jeff",
+      "email": "Jeff@abc.com"
+    }
+  }]
+}

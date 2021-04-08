@@ -1,0 +1,23 @@
+{{#if isShowingModal}}
+  {{#modal-dialog
+          targetAttachment="center"
+          translucentOverlay=true
+          hasOverlay=false
+  }}
+    {{outlet}}
+  {{/modal-dialog}}
+{{/if}}
+
+<!--<button {{action 'toggleModal'}}>Open modal</button>-->
+{{#link-to 'movie.info' 801 invokeAction=(action 'toggleModal')}}fruits{{/link-to}}
+
+<Input @value={{this.query}} oninput={{action "fetchData"}} />
+
+<div class="movies-list">
+  {{#each @movie as |movie|}}
+    <Card @movie={{movie}} @text="Check out on Super Rentals!"/>
+  {{/each}}
+
+</div>
+
+<InfinityLoader @infinityModel={{@movie}} />

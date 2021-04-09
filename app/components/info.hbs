@@ -9,10 +9,10 @@
       </div>
 
       <div class="details__genre">
-        {{#each @movie.genres as |genre|}}
-          <div class="genre__label">
-            {{genre.name}}
-          </div>
+        {{#each this.genres as |genre|}}
+            <div class="genre__label">
+              {{genre.name}}
+            </div>
         {{/each}}
       </div>
 

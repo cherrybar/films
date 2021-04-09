@@ -1,23 +1,17 @@
-{{#if isShowingModal}}
-  {{#modal-dialog
-          targetAttachment="center"
-          translucentOverlay=true
-          hasOverlay=false
-  }}
-    {{outlet}}
-  {{/modal-dialog}}
+<Input placeholder="Type to search" class="movie-search" @value={{this.query}} oninput={{action "fetchData"}} />
+{{#if @movie}}
+  <div class="movies-list">
+    {{#each @movie as |movie|}}
+      <Card @movie={{movie}} @text="Check out on Super Rentals!"/>
+    {{/each}}
+  </div>
+
+  <InfinityLoader
+    @infinityModel={{@movie}}
+    @loadingText="Loading movies..."
+    @loadedText="All movies loaded"
+  />
+
+{{else}}
+  <div class="movies-list__no-movies">No movies found</div>
 {{/if}}
-
-<!--<button {{action 'toggleModal'}}>Open modal</button>-->
-{{#link-to 'movie.info' 801 invokeAction=(action 'toggleModal')}}fruits{{/link-to}}
-
-<Input @value={{this.query}} oninput={{action "fetchData"}} />
-
-<div class="movies-list">
-  {{#each @movie as |movie|}}
-    <Card @movie={{movie}} @text="Check out on Super Rentals!"/>
-  {{/each}}
-
-</div>
-
-<InfinityLoader @infinityModel={{@movie}} />

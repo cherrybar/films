@@ -7,17 +7,12 @@ export default class InfoSerializer extends JSONAPISerializer {
   }
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-    payload.data = []
-    payload.data.push({
-      attributes: {...payload},
-      type: 'info',
-      id: payload.id,
-      title: payload.title
-    })
+    payload.data = {};
+    payload.data.attributes = {...payload};
+    payload.data.type = 'info';
+    payload.data.id = payload.id;
+    payload.data.title = payload.title;
 
-    debugger
-
-
-    return super.normalizeResponse(store, primaryModelClass, payload, id, requestType)
+    return super.normalizeResponse(store, primaryModelClass, payload, id, requestType);
   }
 }

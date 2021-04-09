@@ -15,6 +15,9 @@ module.exports = function (environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false,
       },
+      API: {
+        API_KEY: 'a7e3dbcf50f7bb583986d636632cba3d'
+      }
     },
 
     APP: {

@@ -7,22 +7,16 @@ export default class MovieSerializer extends JSONAPISerializer {
   }
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-    payload.data = [...payload.results]
+    payload.data = [...payload.results];
 
     payload.data.forEach((el, index) => {
-      payload.data[index].attributes = el
-      payload.data[index].id = el.id
-      payload.data[index].type = 'movie'
+      payload.data[index].attributes = el;
+      payload.data[index].id = el.id;
+      payload.data[index].type = 'movie';
     })
 
-    payload.meta = {}
-    payload.meta['total_pages'] = payload['total_pages']
-    payload.meta['total_results'] = payload["total_results"]
-    payload.meta.page = payload.page
+    delete payload.results;
 
-
-    delete payload.results
-
-    return super.normalizeResponse(...arguments)
+    return super.normalizeResponse(...arguments);
   }
 }

@@ -1,5 +1,25 @@
-<div id="mew">
-  {{#each @mew as | item|}}
-    <li> {{item.title }} </li>
-  {{/each}}
+<div class="info">
+    <div class="info__details">
+      <div class="details__name">
+        {{@movie.title}}
+      </div>
+
+      <div class="details__runtime">
+        {{@movie.runtime}} min
+      </div>
+
+      <div class="details__genre">
+        {{#each @movie.genres as |genre|}}
+          <div class="genre__label">
+            {{genre.name}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="details__overview">
+        {{@movie.overview}}
+      </div>
+    </div>
+
+    <div class="info__poster" style={{posterStyles}}></div>
 </div>

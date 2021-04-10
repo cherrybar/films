@@ -8,6 +8,7 @@ export default class InfoComponent extends Component {
   }
 
   get genres() {
+    //movie colud have a lot of genres, so here we limit displaying amount
     let {movie} = this.args
     return movie.genres.slice(0, 4)
   }

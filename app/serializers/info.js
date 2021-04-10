@@ -7,6 +7,7 @@ export default class InfoSerializer extends JSONAPISerializer {
   }
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+    //transform server response to JSON API format
     payload.data = {};
     payload.data.attributes = {...payload};
     payload.data.type = 'info';

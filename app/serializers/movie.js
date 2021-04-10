@@ -7,6 +7,7 @@ export default class MovieSerializer extends JSONAPISerializer {
   }
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+    //transform server response to JSON API format
     payload.data = [...payload.results];
 
     payload.data.forEach((el, index) => {
@@ -15,6 +16,7 @@ export default class MovieSerializer extends JSONAPISerializer {
       payload.data[index].type = 'movie';
     });
 
+    //meta is needed for Infinity Model
     payload.meta = {};
     payload.meta['total_pages'] = payload['total_pages'];
     payload.meta['total_results'] = payload["total_results"];

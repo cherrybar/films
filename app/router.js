@@ -12,5 +12,4 @@ Router.map(function() {
       this.route('info',{ path: '/info/:movie_id' })
     },
   );
-
 });

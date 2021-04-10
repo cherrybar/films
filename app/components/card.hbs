@@ -15,14 +15,19 @@
 </div>
 
 {{#if isShowingModal}}
-  {{#modal-dialog
-    targetAttachment="center"
-    translucentOverlay=true
-    hasOverlay=false
-    clickOutsideToClose=true
-  }}
-    {{outlet}}
-  {{/modal-dialog}}
+    {{#modal-dialog
+            targetAttachment="center"
+            translucentOverlay=true
+            clickOutsideToClose=true
+    }}
+      {{outlet}}
+      <button class="close-button" {{on "click" (fn this.toggleModal)}}>
+        <i class="fa fa-close"></i>
+      </button>
+    {{/modal-dialog}}
+
+
+
 {{/if}}
 
 

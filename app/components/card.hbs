@@ -16,9 +16,9 @@
 
 {{#if isShowingModal}}
     {{#modal-dialog
-            targetAttachment="center"
-            translucentOverlay=true
-            clickOutsideToClose=true
+        targetAttachment="center"
+        translucentOverlay=true
+        clickOutsideToClose=true
     }}
       {{outlet}}
       <button class="close-button" {{on "click" (fn this.toggleModal)}}>

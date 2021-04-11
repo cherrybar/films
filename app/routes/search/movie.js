@@ -7,9 +7,9 @@ export default class InfinityRoute extends Route {
   async model(params) {
     return this.infinity.model('movie', {
       'api_key': EmberENV.API.API_KEY,
-      query: params.query ? params.query : 'a'
-    }).then((results) => {
-      return { movies: results }
+      query: params.query
+    }).then((movies) => {
+      return { movies }
     });
   }
 }

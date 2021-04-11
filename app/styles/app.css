@@ -1,7 +1,7 @@
 @import "ember-modal-dialog/ember-modal-structure.css";
-@import "modal-dialog.css";
-@import "movie-card.css";
 @import "movies-search.css";
+@import "movie-card.css";
+@import "modal-dialog.css";
 
 body {
   background-color: #24201E;

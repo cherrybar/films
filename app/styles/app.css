@@ -1,9 +1,15 @@
 @import "ember-modal-dialog/ember-modal-structure.css";
-@import "ember-modal-dialog/ember-modal-appearance.css";
+@import "modal-dialog.css";
+@import "movie-card.css";
+@import "movies-search.css";
 
 body {
   background-color: #24201E;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #wrapper {
@@ -14,207 +20,6 @@ body {
 }
 
 
-/*movie search*/
-
-.movie-search {
-  height: 50px;
-  width: 50%;
-  outline: none;
-  margin: 20px 0;
-  padding: 5px;
-  font-size: 20px;
-}
-
-.movies-list {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.movies-list__no-movies {
-  color: white;
-  font-size: 20px;
-}
-
-.reached-infinity {
-  display: none;
-}
 
 
-/*movie card*/
 
-.movie-card {
-  margin: 20px;
-  width: 200px;
-}
-
-.movie-poster {
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.movie-poster:after{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: '';
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: #24201E;
-  opacity: .8;
-  z-index: 1;
-}
-
-.movie-poster:hover:after {
-  display: block;
-}
-
-.movie-poster:hover .movie-poster__read-more{
-  display: block;
-}
-
-.movie-poster__image {
-  border-radius: 10px;
-  width: 200px;
-  height: 300px;
-}
-
-.movie-poster__read-more {
-  position: absolute;
-  bottom: 134px;
-  left: 40px;
-  display: none;
-  z-index: 2;
-}
-
-.read-more__button {
-  height: 35px;
-  width: 120px;
-  cursor: pointer;
-  background-color: #ffe900;
-  color: black;
-  outline: none;
-  border: none;
-  font-weight: 600;
-}
-
-.movie-details__header-title {
-  height: 18px;
-  width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 18px;
-  color: #fff;
-}
-
-.movie-details__year {
-  max-height: 45px;
-  margin-top: 5px;
-  font-size: 12px;
-  line-height: 15px;
-  color: #999;
-}
-
-
-/*modal dialog*/
-
-.ember-modal-dialog {
-  position: fixed;
-  margin-left: -300px;
-  margin-top: -150px;
-  width: 600px;
-  height: 300px;
-  transform: none !important;
-  background-color: black;
-}
-
-.ember-modal-overlay.translucent {
-  background-color: rgb(17 14 14 / 77%);
-}
-
-.close-button {
-  width: 25px;
-  height: 25px;
-  border-radius: 25px;
-  cursor: pointer;
-  position: absolute;
-  top: -10px;
-  right: -5px;
-}
-
-/*info in modal dialog*/
-
-.info {
-  width: 100%;
-  display: flex;
-}
-
-.info__details {
-  width: 60%;
-  padding: 30px 0 0 30px;
-}
-
-.info__poster {
-  background-size: cover;
-}
-
-.info__poster {
-  width: 40%;
-  height: 300px;
-}
-
-.details__name {
-  font-size: 25px;
-  color: white;
-}
-
-.details__runtime {
-  color: white;
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.details__genre {
-  display: flex;
-  margin-top: 10px;
-}
-
-.genre__label {
-  border: 1px solid #ffe900;
-  border-radius: 7px;
-  padding: 2px 5px;
-  color: #FFE900;
-  font-size: 11px;
-  margin-right: 10px;
-}
-
-.details__overview {
-  color: white;
-  font-size: 12px;
-  margin-top: 10px;
-  height: 150px;
-  padding: 5px;
-  overflow-y: auto;
-  line-height: 1.5;
-}
-
-.details__overview::-webkit-scrollbar-track
-{
-  background-color: #434343;;
-}
-
-.details__overview::-webkit-scrollbar
-{
-  width: 2px;
-  background-color: #F5F5F5;
-}
-
-.details__overview::-webkit-scrollbar-thumb
-{
-  background-color: #797878;;
-}

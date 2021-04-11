@@ -2,7 +2,7 @@
   <div class="movie-poster">
     <img class="movie-poster__image" src={{this.posterImage}} alt=""/>
     <div class="movie-poster__read-more">
-    {{#link-to 'movie.info' @movie.id invokeAction=(action 'toggleModal')}}
+    {{#link-to 'search.movie.info' @movie.id invokeAction=(action 'toggleModal')}}
       <button class="read-more__button">Read More</button>
     {{/link-to}}
     </div>
@@ -24,10 +24,8 @@
       <button class="close-button" {{on "click" (fn this.toggleModal)}}>
         <i class="fa fa-close"></i>
       </button>
+      <button class="close-button--mobile" {{on "click" (fn this.toggleModal)}}>Close</button>
     {{/modal-dialog}}
-
-
-
 {{/if}}
 
 

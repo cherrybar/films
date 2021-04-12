@@ -4,9 +4,11 @@
         {{@movie.title}}
       </div>
 
-      <div class="details__runtime">
-        {{@movie.runtime}} min
-      </div>
+      {{#if @movie.runtime}}
+        <div class="details__runtime">
+          {{@movie.runtime}} min
+        </div>
+      {{/if}}
 
       <div class="details__genre">
         {{#each this.genres as |genre|}}
